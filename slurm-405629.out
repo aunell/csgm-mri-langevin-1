@@ -1,0 +1,140 @@
+/data/vision/polina/users/aunell/mri-langevin/env/lib/python3.7/site-packages/hydra/plugins/config_source.py:190: UserWarning: 
+Missing @package directive file/knees.yaml in file:///data/vision/polina/users/aunell/mri-langevin/csgm-mri-langevin-1/configs.
+See https://hydra.cc/docs/next/upgrades/0.11_to_1.0/adding_a_package_directive
+  warnings.warn(message=msg, category=UserWarning)
+[INFO/MainProcess] Logging to /data/vision/polina/users/aunell/mri-langevin/csgm-mri-langevin-1/outputs/2023-05-09/12-56-37
+mp running
+COMET ERROR: We failed to read file main.py for uploading.
+Please double-check the file path and permissions
+COMET WARNING: truncated string; too long: '{'training': "{'batch_size': '1', 'n_epochs': '500000', 'n_iters': '320001', 'snapshot_freq': '10000', 'snapshot_sampling': 'True', 'anneal_power': '2', 'log_all_sigmas': 'False'}", 'sampling': "{'batch_size': '1', 'data_init': 'False', 'step_lr': '5e-05', 'n_steps_each': '3', 'ckpt_id': '5000', 'final_only': 'True', 'fid': 'False', 'denoise': 'True', 'num_samples4fid': '10000', 'inpainting': 'False', 'interpolation': 'False', 'n_interpolations': '8'}", 'fast_fid': "{'batch_size': '1000', 'num_samples': '1000', 'step_lr': '9e-07', 'n_steps_each': '3', 'begin_ckpt': '100000', 'end_ckpt': '80000', 'verbose': 'False', 'ensemble': 'False'}", 'test': "{'begin_ckpt': '5000', 'end_ckpt': '80000', 'batch_size': '100'}", 'data': "{'dataset': 'mri-mvue', 'image_size': '320', 'channels': '2', 'logit_transform': 'False', 'uniform_dequantization': 'False', 'gaussian_dequantization': 'False', 'random_flip': 'False', 'rescaled': 'False', 'num_workers': '8'}", 'model': "{'sigma_begin': '232', 'num_classes': '2311', 'ema': 'True', 'ema_rate': '0.999', 'spec_norm': 'False', 'sigma_dist': 'geometric', 'sigma_end': '0.0066', 'normalization': 'InstanceNorm++', 'nonlinearity': 'elu', 'ngf': '128'}", 'optim': "{'weight_decay': '0.0', 'optimizer': 'Adam', 'lr': '0.0001', 'beta1': '0.9', 'amsgrad': 'False', 'eps': '0.001'}"}'...
+user
+	csgm-mri-langevin
+model_type
+	ncsnv2
+seed
+	42
+device
+	cuda
+batch_size
+	1
+repeat
+	1
+gen_ckpt
+	/data/vision/polina/users/aunell/mri-langevin/score-diffusion-training/models/FastMRI_bas_MCFullFastMRI/sigma_begin185_sigma_end0.0053_num_classes2311.0_sigma_rate0.9955_epochs600.0/epoch50_final_model.pt
+mse
+	5.0
+start_iter
+	1155
+image_size
+	[320, 320]
+input_dir
+	./datasets/knees
+maps_dir
+	./datasets/knees_maps
+anatomy
+	knees
+R
+	4
+pattern
+	random
+exp_names
+	0
+orientation
+	vertical
+save_latent
+	False
+save_images
+	True
+save_dataloader_every
+	1000000
+save_iter
+	100
+debug
+	False
+world_size
+	1
+multiprocessing
+	False
+port
+	12345
+langevin_config
+	{'training': {'batch_size': 1, 'n_epochs': 500000, 'n_iters': 320001, 'snapshot_freq': 10000, 'snapshot_sampling': True, 'anneal_power': 2, 'log_all_sigmas': False}, 'sampling': {'batch_size': 1, 'data_init': False, 'step_lr': 5e-05, 'n_steps_each': 3, 'ckpt_id': 5000, 'final_only': True, 'fid': False, 'denoise': True, 'num_samples4fid': 10000, 'inpainting': False, 'interpolation': False, 'n_interpolations': 8}, 'fast_fid': {'batch_size': 1000, 'num_samples': 1000, 'step_lr': 9e-07, 'n_steps_each': 3, 'begin_ckpt': 100000, 'end_ckpt': 80000, 'verbose': False, 'ensemble': False}, 'test': {'begin_ckpt': 5000, 'end_ckpt': 80000, 'batch_size': 100}, 'data': {'dataset': 'mri-mvue', 'image_size': 320, 'channels': 2, 'logit_transform': False, 'uniform_dequantization': False, 'gaussian_dequantization': False, 'random_flip': False, 'rescaled': False, 'num_workers': 8}, 'model': {'sigma_begin': 232, 'num_classes': 2311, 'ema': True, 'ema_rate': 0.999, 'spec_norm': False, 'sigma_dist': 'geometric', 'sigma_end': 0.0066, 'normalization': 'InstanceNorm++', 'nonlinearity': 'elu', 'ngf': 128}, 'optim': {'weight_decay': 0.0, 'optimizer': 'Adam', 'lr': 0.0001, 'beta1': 0.9, 'amsgrad': False, 'eps': 0.001}}
+Traceback (most recent call last):
+  File "/data/vision/polina/users/aunell/mri-langevin/env/lib/python3.7/site-packages/hydra/_internal/utils.py", line 198, in run_and_report
+    return func()
+  File "/data/vision/polina/users/aunell/mri-langevin/env/lib/python3.7/site-packages/hydra/_internal/utils.py", line 350, in <lambda>
+    overrides=args.overrides,
+  File "/data/vision/polina/users/aunell/mri-langevin/env/lib/python3.7/site-packages/hydra/_internal/hydra.py", line 112, in run
+    configure_logging=with_log_configuration,
+  File "/data/vision/polina/users/aunell/mri-langevin/env/lib/python3.7/site-packages/hydra/core/utils.py", line 127, in run_job
+    ret.return_value = task_function(task_cfg)
+  File "main.py", line 510, in main
+    mp_run(0, config, project_dir, working_dir, files)
+  File "main.py", line 423, in mp_run
+    shuffle=True if sampler is None else False)
+  File "/data/vision/polina/users/aunell/mri-langevin/env/lib/python3.7/site-packages/torch/utils/data/dataloader.py", line 266, in __init__
+    sampler = RandomSampler(dataset, generator=generator)  # type: ignore
+  File "/data/vision/polina/users/aunell/mri-langevin/env/lib/python3.7/site-packages/torch/utils/data/sampler.py", line 104, in __init__
+    "value, but got num_samples={}".format(self.num_samples))
+ValueError: num_samples should be a positive integer value, but got num_samples=0
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "main.py", line 519, in <module>
+    main()
+  File "/data/vision/polina/users/aunell/mri-langevin/env/lib/python3.7/site-packages/hydra/main.py", line 37, in decorated_main
+    strict=strict,
+  File "/data/vision/polina/users/aunell/mri-langevin/env/lib/python3.7/site-packages/hydra/_internal/utils.py", line 347, in _run_hydra
+    lambda: hydra.run(
+  File "/data/vision/polina/users/aunell/mri-langevin/env/lib/python3.7/site-packages/hydra/_internal/utils.py", line 237, in run_and_report
+    assert mdl is not None
+AssertionError
+COMET INFO: ----------------------------------
+COMET INFO: Comet.ml OfflineExperiment Summary
+COMET INFO: ----------------------------------
+COMET INFO:   Data:
+COMET INFO:     display_summary_level : 1
+COMET INFO:     url                   : [OfflineExperiment will get URL after upload]
+COMET INFO:   Others:
+COMET INFO:     offline_experiment : True
+COMET INFO:   Parameters:
+COMET INFO:     R                     : 4
+COMET INFO:     anatomy               : knees
+COMET INFO:     batch_size            : 1
+COMET INFO:     debug                 : 1
+COMET INFO:     device                : cuda
+COMET INFO:     exp_names             : 1
+COMET INFO:     gen_ckpt              : /data/vision/polina/users/aunell/mri-langevin/score-diffusion-training/models/FastMRI_bas_MCFullFastMRI/sigma_begin185_sigma_end0.0053_num_classes2311.0_sigma_rate0.9955_epochs600.0/epoch50_final_model.pt
+COMET INFO:     image_size            : [320, 320]
+COMET INFO:     input_dir             : ./datasets/knees
+COMET INFO:     langevin_config       : {'training': "{'batch_size': '1', 'n_epochs': '500000', 'n_iters': '320001', 'snapshot_freq': '10000', 'snapshot_sampling': 'True', 'anneal_power': '2', 'log_all_sigmas': 'False'}", 'sampling': "{'batch_size': '1', 'data_init': 'False', 'step_lr': '5e-05', 'n_steps_each': '3', 'ckpt_id': '5000', 'final_only': 'True', 'fid': 'False', 'denoise': 'True', 'num_samples4fid': '10000', 'inpainting': 'False', 'interpolation': 'False', 'n_interpolations': '8'}", 'fast_fid': "{'batch_size': '1000', 'num_samples': '1000', 'step_lr': '9e-07', 'n_steps_each': '3', 'begin_ckpt': '100000', 'end_ckpt': '80000', 'verbose': 'False', 'ensemble': 'False'}", 'test': "{'begin_ckpt': '5000', 'end_ckpt': '80000', 'batch_size': '100'}", 'data': "{'dataset': 'mri-mvue', 'image_size': '320', 'channels': '2', 'logit_transform': 'False', 'uniform_dequantization': 'False', 'gaussian_dequantization': 'False', 'random_flip': 'False', 'rescaled': 'False', 'num_workers': '8'}", 'model': "{'sigma_begin': '23 [truncated]
+COMET INFO:     maps_dir              : ./datasets/knees_maps
+COMET INFO:     model_type            : ncsnv2
+COMET INFO:     mse                   : 5.0
+COMET INFO:     multiprocessing       : 1
+COMET INFO:     orientation           : vertical
+COMET INFO:     pattern               : random
+COMET INFO:     port                  : 12345
+COMET INFO:     repeat                : 1
+COMET INFO:     save_dataloader_every : 1000000
+COMET INFO:     save_images           : True
+COMET INFO:     save_iter             : 100
+COMET INFO:     save_latent           : 1
+COMET INFO:     seed                  : 42
+COMET INFO:     start_iter            : 1155
+COMET INFO:     user                  : csgm-mri-langevin
+COMET INFO:     world_size            : 1
+COMET INFO:   Uploads:
+COMET INFO:     environment details      : 1
+COMET INFO:     filename                 : 1
+COMET INFO:     git metadata             : 1
+COMET INFO:     git-patch (uncompressed) : 1 (6 KB)
+COMET INFO:     installed packages       : 1
+COMET INFO:     os packages              : 1
+COMET INFO: ----------------------------------
+COMET INFO: Saving offline stats to disk before program termination (may take several seconds)
+COMET INFO: Starting saving the offline archive
+COMET INFO: To upload this offline experiment, run:
+    comet upload ./outputs/e6b1cad23cc44fd0a0225274bebe57b8.zip
+[INFO/MainProcess] process shutting down

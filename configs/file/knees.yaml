@@ -6,7 +6,8 @@ batch_size: 1
 repeat: 1
 
 # The pre-trained NCSNV2 checkpoint
-gen_ckpt: ncsnv2-mri-mvue/logs/mri-mvue/checkpoint_100000.pth
+gen_ckpt: /data/vision/polina/users/aunell/mri-langevin/score-diffusion-training/models/FastMRI_bas_MCFullFastMRI/sigma_begin185_sigma_end0.0053_num_classes2311.0_sigma_rate0.9955_epochs600.0/epoch50_final_model.pt
+#ncsnv2-mri-mvue/logs/mri-mvue/checkpoint_100000.pth
 
 ## weights of different losses
 mse: 5.
